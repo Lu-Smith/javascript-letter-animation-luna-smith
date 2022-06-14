@@ -36,10 +36,18 @@ class Particle {
   }
 
   draw() {
-    ctx.fillStyle = `#680747`;
+    let dx = mouse.x - this.x;
+    let dy = mouse.y - this.y;
+    let distance = Math.sqrt(dx * dx + dy * dy);
+
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.fill();
+    if (distance < mouse.radius) {
+      ctx.fillStyle = `white`;
+    } else {
+      ctx.fillStyle = `#680747`;
+    }
   }
   update() {
     let dx = mouse.x - this.x;
@@ -76,7 +84,7 @@ function init() {
       ) {
         let positionX = x + adjustX;
         let positionY = y + adjustY;
-        particleArray.push(new Particle(positionX * 14, positionY * 14));
+        particleArray.push(new Particle(positionX * 16, positionY * 14));
       }
     }
   }
