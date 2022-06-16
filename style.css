@@ -4,12 +4,17 @@
   box-sizing: border-box;
 }
 body {
-  overflow: hidden;
   background: black;
 }
 
-canvas {
-  position: absolute;
-  left: 0;
-  top: 0;
+footer {
+  color: white;
+}
+.footer-link {
+  text-decoration: none;
+  color: rgb(244, 199, 199);
+}
+
+.footer-link:hover {
+  color: rgb(202, 134, 134);
 }

@@ -12,7 +12,7 @@ let adjustY = 10;
 const mouse = {
   x: null,
   y: null,
-  radius: 150,
+  radius: 170,
 };
 
 window.addEventListener("mousemove", function (event) {
@@ -29,7 +29,7 @@ class Particle {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.size = 3;
+    this.size = 4;
     this.baseX = this.x;
     this.baseY = this.y;
     this.density = Math.random() * 50 + 30;
@@ -65,16 +65,15 @@ class Particle {
     } else {
       if (this.x !== this.baseX) {
         let dx = this.x - this.baseX;
-        this.x -= dx / 15;
+        this.x -= dx / 10;
       }
       if (this.y !== this.baseY) {
         let dy = this.y - this.baseY;
-        this.y -= dy / 15;
+        this.y -= dy / 10;
       }
     }
   }
 }
-console.log(textCoordinates);
 function init() {
   particleArray = [];
   for (let y = 0, y2 = textCoordinates.height; y < y2; y++) {
@@ -88,12 +87,9 @@ function init() {
       }
     }
   }
-  // particleArray.push(new Particle(80, 200));
-  // particleArray.push(new Particle(120, 80));
 }
 
 init();
-console.log(particleArray);
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -111,15 +107,12 @@ function connect() {
   let opacityValue = 1;
   for (let a = 0; a < particleArray.length; a++) {
     for (let b = a; b < particleArray.length; b++) {
-      // let dx = mouse.x - this.x;
-      //let dy = mouse.y - this.y;
-      //let distance = Math.sqrt(dx * dx + dy * dy);
       let dx = particleArray[a].x - particleArray[b].x;
       let dy = particleArray[a].y - particleArray[b].y;
       let distance = Math.sqrt(dx * dx + dy * dy);
-      opacityValue = 1 - distance / 30;
+      opacityValue = 1 - distance / 20;
       ctx.strokeStyle = `rgba(255, 255, 255,` + opacityValue + `)`;
-      if (distance < 30) {
+      if (distance < 32) {
         ctx.strokeStyle = `#F70776`;
         ctx.lineWidth = 1;
         ctx.beginPath();
