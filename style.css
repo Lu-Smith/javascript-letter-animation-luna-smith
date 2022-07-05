@@ -7,11 +7,7 @@ body {
   background: black;
   padding: 40px;
 }
-h1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+
 footer {
   color: white;
 }
