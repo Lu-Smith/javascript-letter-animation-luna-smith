@@ -19,3 +19,16 @@ footer {
 .footer-link:hover {
   color: rgb(202, 134, 134);
 }
+
+@media (max-width: 480px) {
+  canvas {
+    position: relative;
+    left: -100px;
+    width: 360px;
+    height: 300px;
+  }
+
+  footer {
+    text-align: center;
+  }
+}
