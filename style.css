@@ -7,7 +7,11 @@ body {
   background: black;
   padding: 40px;
 }
-
+h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 footer {
   color: white;
 }
@@ -20,12 +24,13 @@ footer {
   color: rgb(202, 134, 134);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 820px) {
+  body {
+    padding-left: 0px;
+  }
   canvas {
     position: relative;
-    left: -400px;
-    width: 600px;
-    height: 600px;
+    left: -120px;
   }
 
   footer {
@@ -34,9 +39,6 @@ footer {
 }
 @media (max-width: 480px) {
   canvas {
-    position: relative;
-    left: -260px;
-    width: 300px;
-    height: 300px;
+    left: -160px;
   }
 }
